@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import cataloguesReducer from "./Catalogues";
+import catalogReducer from "./Catalog";
 
 const rootReducer = combineReducers({
-  cataloguesState: cataloguesReducer,
+  catalogState: catalogReducer,
 });
 
 export default rootReducer;

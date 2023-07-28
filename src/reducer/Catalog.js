@@ -27,8 +27,8 @@ export const getItems = createAsyncThunk(
   }
 );
 
-const cataloguesSlice = createSlice({
-  name: "cataloguesState",
+const catalogSlice = createSlice({
+  name: "catalogState",
   initialState,
   reducers: {
     setPage: (state, action) => {
@@ -57,6 +57,6 @@ const cataloguesSlice = createSlice({
   },
 });
 
-export const { setPage, getOneItem } = cataloguesSlice.actions;
+export const { setPage, getOneItem } = catalogSlice.actions;
 
-export default cataloguesSlice.reducer;
+export default catalogSlice.reducer;

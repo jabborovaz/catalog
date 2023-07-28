@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useNavigate } from "react-router-dom";
-import { getItems, setPage } from "../../reducer/Catalogues";
+import { getItems, setPage } from "../../reducer/Catalog";
 import Card from "../../components/Card";
 import Loader from "../../components/Loader";
 import { capitalizeFirstLetter } from "../../global/GlobalFunctions";
@@ -11,7 +11,7 @@ function Catalogues() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { page, items, loading } = useSelector(
-    ({ cataloguesState }) => cataloguesState
+    ({ catalogState }) => catalogState
   );
 
   const handlePagination = (page) => {

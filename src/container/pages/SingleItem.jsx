@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { getOneItem } from "../../reducer/Catalogues";
+import { getOneItem } from "../../reducer/Catalog";
 import { capitalizeFirstLetter } from "../../global/GlobalFunctions";
 
 function SingleItem() {
   const dispatch = useDispatch();
   const { itemId } = useParams();
-  const { singleItem } = useSelector(({ cataloguesState }) => cataloguesState);
+  const { singleItem } = useSelector(({ catalogState }) => catalogState);
 
   useEffect(() => {
     dispatch(getOneItem(itemId));

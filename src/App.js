@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
-import { Layout, Catalogues, SingleItemPage } from "./router/router";
+import { Layout, Catalog, SingleItemPage } from "./router/router";
 import Loader from "./components/Loader";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             index
             element={
               <Suspense fallback={<Loader />}>
-                <Catalogues />
+                <Catalog />
               </Suspense>
             }
           />
