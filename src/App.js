@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
-import { Layout } from "./router/router";
+import { Layout, Catalogues } from "./router/router";
 
 function App() {
   return (
@@ -14,7 +14,16 @@ function App() {
               <Layout />
             </Suspense>
           }
-        ></Route>
+        >
+          <Route
+            index
+            element={
+              <Suspense fallback={<p>Loading ...</p>}>
+                <Catalogues />
+              </Suspense>
+            }
+          />
+        </Route>
       </Routes>
     </>
   );
