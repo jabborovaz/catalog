@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
-import { Layout, Catalogues } from "./router/router";
+import { Layout, Catalogues, SingleItemPage } from "./router/router";
 
 function App() {
   return (
@@ -20,6 +20,14 @@ function App() {
             element={
               <Suspense fallback={<p>Loading ...</p>}>
                 <Catalogues />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/:itemId"
+            element={
+              <Suspense fallback={<p>Loading ...</p>}>
+                <SingleItemPage />
               </Suspense>
             }
           />

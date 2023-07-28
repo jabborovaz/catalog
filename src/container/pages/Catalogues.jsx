@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useNavigate } from "react-router-dom";
 import { getItems, setPage } from "../../reducer/Catalogues";
 import Card from "../../components/Card";
+import { capitalizeFirstLetter } from "../../global/GlobalFunctions";
 import { Pagination, Spin } from "antd";
 
 function Catalogues() {
   const dispatch = useDispatch();
   const containerRef = useRef(null);
+  const navigate = useNavigate();
   const { page, items, loading } = useSelector(
     ({ cataloguesState }) => cataloguesState
   );
@@ -30,7 +33,12 @@ function Catalogues() {
           {items &&
             items?.map((elem, index) => {
               return (
-                <Card title={elem.title} imagePath={elem.url} key={index} />
+                <Card
+                  title={capitalizeFirstLetter(elem.title)}
+                  imagePath={elem.url}
+                  key={index}
+                  handleClick={() => navigate(`/${elem.id}`)}
+                />
               );
             })}
         </div>

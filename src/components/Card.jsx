@@ -1,8 +1,9 @@
 import React from "react";
 
-function Card({ title, imagePath, key }) {
+function Card({ title, imagePath, key, handleClick = () => {} }) {
   return (
     <div
+      onClick={handleClick}
       className="w-full flex flex-col justify-between items-start h-[290px] p-5 rounded-[16px] bg-white drop-shadow-xl cursor-pointer hover:scale-[102%] active:scale-[99%] transition-all ease-linear duration-150"
       key={key}
     >

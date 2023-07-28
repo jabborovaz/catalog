@@ -9,12 +9,13 @@ const initialState = {
   status: "",
   loading: false,
   items: null,
+  singleItem: null,
   page: 1,
 };
 
 export const getItems = createAsyncThunk(
   "cataloguesApi/getItems",
-  async (currentPage, { rejectWithValue, dispatch }) => {
+  async (currentPage, { rejectWithValue }) => {
     try {
       let uri = `albums/${currentPage}/photos`;
 
@@ -32,6 +33,9 @@ const cataloguesSlice = createSlice({
   reducers: {
     setPage: (state, action) => {
       state.page = action.payload;
+    },
+    getOneItem: (state, action) => {
+      state.singleItem = state.items?.find((elem) => elem.id == action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -51,6 +55,6 @@ const cataloguesSlice = createSlice({
   },
 });
 
-export const { setPage } = cataloguesSlice.actions;
+export const { setPage, getOneItem } = cataloguesSlice.actions;
 
 export default cataloguesSlice.reducer;
