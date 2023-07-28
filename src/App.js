@@ -1,10 +1,22 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { Suspense } from "react";
+import { Layout } from "./router/router";
 
 function App() {
   return (
-    <div>
-      <h2 className="text-[30px] font-bold text-yellow-500">Hello world</h2>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<p>Loading ...</p>}>
+              <Layout />
+            </Suspense>
+          }
+        ></Route>
+      </Routes>
+    </>
   );
 }
 
