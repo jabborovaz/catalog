@@ -22,7 +22,7 @@ function Layout() {
                     : "border-[#f59e0b]"
                 } text-[18px] xl:text-[24px] m-0 text-[#f59e0b] font-[600] py-2 border-b-2 hover:border-[#f59e0b] hover:opacity-100 active:shadow-2xl transition-all ease-in duration-150`}
               >
-                Catalogues
+                Catalog
               </button>
 
               <button
