@@ -18,12 +18,12 @@ function SingleItem() {
   return (
     <>
       <div className="my-10 w-[85%] max-w-[1300px] mx-auto">
-        <div className="w-[50%] mx-auto h-[430px] flex flex-col justify-between items-start bg-white rounded-[16px] p-6">
-          <h2 className="text-[22px] m-0 font-[500] text-center">
+        <div className="w-full md:w-[90%] lg:w-[50%] mx-auto h-[430px] flex flex-col justify-between items-start bg-white rounded-[16px] p-6">
+          <h2 className="text-[22px] m-0 font-[500] text-center w-[80%] mx-auto">
             {capitalizeFirstLetter(singleItem?.title)}
           </h2>
 
-          <div className="w-[80%] mx-auto h-[75%]">
+          <div className="w-full lg:w-[80%] mx-auto h-[75%]">
             <img
               width="100%"
               height="100%"

@@ -35,7 +35,9 @@ const cataloguesSlice = createSlice({
       state.page = action.payload;
     },
     getOneItem: (state, action) => {
-      state.singleItem = state.items?.find((elem) => elem.id == action.payload);
+      state.singleItem = state.items?.find(
+        (elem) => Number(elem.id) === Number(action.payload)
+      );
     },
   },
   extraReducers: (builder) => {

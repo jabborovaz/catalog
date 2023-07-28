@@ -29,7 +29,10 @@ function Catalogues() {
     <>
       {loading && <Spin tip="Loading..." />}
       <div className="my-10 w-[85%] max-w-[1300px] mx-auto flex flex-col space-y-5">
-        <div ref={containerRef} className="w-full grid grid-cols-4 gap-7 ">
+        <div
+          ref={containerRef}
+          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 "
+        >
           {items &&
             items?.map((elem, index) => {
               return (
