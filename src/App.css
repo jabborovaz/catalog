@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+#top {
+  scroll-behavior: smooth !important;
+}
+
 .animation-blog {
   cursor: pointer;
   transition: all 0.2s ease 0s;

@@ -9,8 +9,6 @@ function SingleItem() {
   const { itemId } = useParams();
   const { singleItem } = useSelector(({ cataloguesState }) => cataloguesState);
 
-  console.log(singleItem);
-
   useEffect(() => {
     dispatch(getOneItem(itemId));
   }, [dispatch, itemId]);

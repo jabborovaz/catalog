@@ -8,9 +8,12 @@ function Layout() {
   return (
     <div className="w-full h-screen flex flex-col justify-between overflow-y-auto bg-[#F6F8FA]">
       <div className="w-full">
-        <header className="w-full sticky top-0 left-0 py-2 bg-[#F6F8FA] z-50 drop-shadow-xl">
+        <header className="w-full py-2 bg-[#F6F8FA] z-50 drop-shadow-xl">
           <div className="w-[85%] max-w-[1300px] mx-auto">
-            <nav className="w-full md:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto flex flex-row justify-between items-center">
+            <nav
+              id="top"
+              className="w-full md:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto flex flex-row justify-between items-center"
+            >
               <button
                 onClick={() => navigate("/")}
                 className={`${
