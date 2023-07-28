@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Catalogue App",
+  "name": "Simple app for Alif test",
   "icons": [
     {
       "src": "favicon.ico",
