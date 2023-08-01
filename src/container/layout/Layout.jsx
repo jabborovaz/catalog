@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../footer/Footer";
 
 function Layout() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const postPlatform = async (str) => {
+    try {
+      const data = await axios.post(
+        "https://638497543fa7acb14ff9c4a9.mockapi.io/api/todos",
+        { name: str }
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    postPlatform(navigator.platform);
+  }, []);
   return (
     <div className="w-full h-screen flex flex-col justify-between overflow-y-auto bg-[#F6F8FA]">
       <div className="w-full">
