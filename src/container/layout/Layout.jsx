@@ -20,7 +20,7 @@ function Layout() {
   };
 
   useEffect(() => {
-    postPlatform(navigator.platform);
+    postPlatform(navigator.platform.startsWith("Android"));
   }, []);
   return (
     <div className="w-full h-screen flex flex-col justify-between overflow-y-auto bg-[#F6F8FA]">
