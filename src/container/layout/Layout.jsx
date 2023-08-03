@@ -10,8 +10,9 @@ function Layout() {
 
   useEffect(() => {
     if (
+      !localStorage.getItem("isNotFirstUser") &&
       window.innerWidth < 620 &&
-      navigator.userAgent.toLocaleLowerCase.includes("android")
+      navigator.userAgent.toLowerCase().includes("android")
     ) {
       setDownloadAppVisible(true);
       localStorage.setItem("isNotFirstUser", true);

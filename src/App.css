@@ -21,3 +21,8 @@
 .animation-blog:active {
   transform: translateY(-1px);
 }
+
+.downloadApp .ant-modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+}
