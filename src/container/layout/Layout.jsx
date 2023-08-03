@@ -1,29 +1,29 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../footer/Footer";
+import DownloadAppModal from "../../components/DownloadAppModal";
 
 function Layout() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
-  const postPlatform = async (str) => {
-    try {
-      const data = await axios.post(
-        "https://638497543fa7acb14ff9c4a9.mockapi.io/api/todos",
-        { name: str }
-      );
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [downloadAppVisible, setDownloadAppVisible] = useState(false);
 
   useEffect(() => {
-    postPlatform(navigator.userAgent);
+    if (
+      !localStorage.getItem("isNotFirstUser") &&
+      window.innerWidth < 620 &&
+      navigator.userAgent.toLocaleLowerCase.includes("android")
+    ) {
+      setDownloadAppVisible(true);
+      localStorage.setItem("isNotFirstUser", true);
+    }
   }, []);
   return (
     <div className="w-full h-screen flex flex-col justify-between overflow-y-auto bg-[#F6F8FA]">
+      <DownloadAppModal
+        visible={downloadAppVisible}
+        closeModal={() => setDownloadAppVisible(false)}
+      />
       <div className="w-full">
         <header className="w-full py-2 bg-[#F6F8FA] z-50 drop-shadow-xl">
           <div className="w-[85%] max-w-[1300px] mx-auto">
