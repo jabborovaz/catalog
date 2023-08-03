@@ -10,7 +10,6 @@ function Layout() {
 
   useEffect(() => {
     if (
-      !localStorage.getItem("isNotFirstUser") &&
       window.innerWidth < 620 &&
       navigator.userAgent.toLocaleLowerCase.includes("android")
     ) {

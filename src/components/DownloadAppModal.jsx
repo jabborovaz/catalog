@@ -26,6 +26,7 @@ function DownloadAppModal({ visible, closeModal = () => {} }) {
         </div>
         <div className="w-[70%] h-full flex flex-col justify-between items-center">
           <a
+            rel="noreferrer"
             href="https://play.google.com/store/apps/details?id=com.edonish.market"
             target="_blank"
             className="w-full h-[50%] bg-[#2B31A4] text-white text-[12px] font-[400] rounded-[9px] text-center pt-2"
